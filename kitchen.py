@@ -1,14 +1,10 @@
 class Quantity: 
- def __init__(self, amount): 
+ def __init__(self, amount, unit): 
   self.amount = amount 
+  self.unit = unit 
  def times(self, multiplier): 
-  self.amount = 600 
-  
-def times(self, multiplier): 
- self.amount = self.amount * multiplier 
- 
-def __eq__(self, other): 
- return self.amount == other.amount 
-def __repr__(self): 
- return f"Quantity({self.amount})" 
-
+  return Quantity(self.amount * multiplier, self.unit) 
+ def __eq__(self, other): 
+  return self.amount == other.amount and self.unit == other.unit 
+ def __repr__(self): 
+  return f"Quantity({self.amount}, {self.unit!r})" 
